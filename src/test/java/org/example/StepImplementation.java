@@ -8,6 +8,10 @@ import io.restassured.response.Response;
 import org.json.JSONObject;
 import org.junit.jupiter.api.Assertions;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,6 +23,7 @@ public class StepImplementation {
 
     JSONObject jObject = null;
     Response response = null;
+    String jsonBody=null;
    // public static final String BASE_URL = "https://api.spotify.com/v1/";
   // public static final String BASE_URL = "https://testinium.io/Testinium.RestApi/api/";
    public static final String BASE_URL="https://petstore.swagger.io/v2/";
@@ -152,4 +157,58 @@ public class StepImplementation {
 
 
 
+    @Step("<api> json dosyasındaki apiye <type> methoduyla istek at")
+    public void setApiJson(String api,String type) throws IOException {
+
+      jsonBody = generateStringFromResource("src/test/resources/emre.json");
+
+        System.out.println(RestAssured.baseURI + RestAssured.basePath + " servisine " + type + " istegi atildi" );
+        if(type.equals("post"))
+        {
+            response= RestAssured.given().headers(headers)
+                    .contentType(ContentType.JSON)
+                    .body(jsonBody)
+                    .post(api);
+        }
+        else if(type.equals("put"))
+        {
+            response= RestAssured.given().headers(headers)
+                    .contentType(ContentType.JSON)
+                    .body(jsonBody)
+                    .put(api);
+        }
+        else if(type.equals("get"))
+        {
+            response= RestAssured.given().headers(headers)
+                    .contentType(ContentType.JSON)
+                    .queryParam(jsonBody.toString())
+                    .get(api);
+        }
+        else if(type.equals("delete"))
+        {
+            response= RestAssured.given().headers(headers)
+                    .contentType(ContentType.JSON)
+                    .body(jsonBody)
+                    .delete(api);
+        }
+        else {
+            System.out.println("Lütfen geçerli bir deger giriniz");
+        }
+        System.out.println("Request:"+jsonBody);
+        System.out.println("Response:"+response.getBody().asString());
+    }
+
+
+    public String generateStringFromResource(String path) throws IOException {
+        return new String(Files.readAllBytes(Paths.get(path)));
+    }
+
+
+
+
+
 }
+
+
+
+

@@ -73,5 +73,12 @@ Post
 * status kod "200" ile ayni mi kontrol et
 
 
+Jsonnn
+---------------
+* "https://reqres.in/api/users" json dosyasındaki apiye "post" methoduyla istek at
+
+
+
+
 
 
