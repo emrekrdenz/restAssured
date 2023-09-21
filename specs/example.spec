@@ -14,54 +14,13 @@ Post1
 * response "item_list[2].id" keyinin degerini "itemListID" olarak kaydet
 
 
-PostHashmap
--------------
-* "ad" keyli "emre1" degeri hashmap'e ekle
-* "soyad" keyli "karadeniz1" degeri hashmap'e ekle
-
-* Jobject Oluştur
-* "id" key ve "1" value degerini JObjecte ekle
-* "username" keyine hashmapdeki "ad" keyli değeri JObjecte ekle
-* "firstName" keyine hashmapdeki "soyad" keyli değeri JObjecte ekle
-* "user" apiye "post" methoduyla istek at
-* status kod "200" ile ayni mi kontrol et
-* response "code" keyinin degerini "IDcodee" olarak kaydet
-
-
-* Jobject Oluştur
-* "id" keyine hashmapdeki "IDcodee" keyli değeri JObjecte ekle
-* "username" keyine hashmapdeki "ad" keyli değeri JObjecte ekle
-* "firstName" keyine hashmapdeki "soyad" keyli değeri JObjecte ekle
-* "user" apiye "post" methoduyla istek at
-* status kod "200" ile ayni mi kontrol et
-
-
-spotify
--------------
-* "Authorization" key "Bearer BQCKP39frqWVpWMHIQ_wOr14QLdqNejhJlWR8Hbk6Hw03reugyLgAEO5qvskT7bhH6i7hOojBnS6V6fYnqMvFCTttETFSYiFX5jMftydxyecgGChrxonqkHVi5BExrrjaFEfhUhrs8bR0BH3C6IO0rI7s-flvHsa7NmeUX5s-lI" value degerini headera ekle
-* "Content-Type" key "application/json" value degerini headera ekle
-* Jobject Oluştur
-* "me" apiye "get" methoduyla istek at
-* status kod "200" ile ayni mi kontrol et
-
-
-Get
--------------
-*Jobject Oluştur
-* "username" key ve "emre" value degerini JObjecte ekle
-* "password" key ve "1234" value degerini JObjecte ekle
-* "user/login" apiye "get" methoduyla istek at
-* status kod "200" ile ayni mi kontrol et
-* response "type" alanı "unknown" iceriyor mu kontrol et
-
 Get1
 -------------
 * "accept" key "application/json" value degerini headera ekle
 * "api_key" key "emre" value degerini headera ekle
 * Jobject Oluştur
-* "pet/12" apiye "get" methoduyla istek at
+* "https://petstore.swagger.io/v2/pet/12" apiye "get" methoduyla istek at
 * status kod "200" ile ayni mi kontrol et
-
 
 Post
 -------------
@@ -69,16 +28,12 @@ Post
 * "id" key ve "1" value degerini JObjecte ekle
 * "username" key ve "emre" value degerini JObjecte ekle
 * "firstName" key ve "karadeniz" value degerini JObjecte ekle
-* "user" apiye "post" methoduyla istek at
+* "https://petstore.swagger.io/v2/user" apiye "post" methoduyla istek at
 * status kod "200" ile ayni mi kontrol et
 
 
-Jsonnn
----------------
-* "https://reqres.in/api/users" json dosyasındaki apiye "post" methoduyla istek at
-
-
-
-
-
-
+JSONN2
+------------------
+* "emre" keyli "emreKaraddd" degeri hashmap'e ekle
+* "emre" json pathindeki requestBodyi hazırla
+* "https://reqres.in/api/users" requestBodydeki degerlerle servise "post" methoduyla istek at
