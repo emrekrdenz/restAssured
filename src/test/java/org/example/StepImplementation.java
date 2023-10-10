@@ -181,7 +181,7 @@ public class StepImplementation {
     public void addQueryHashmapten(String key, String value) {
         params.put(key, hashMap.get(value).toString());
         System.out.println("Query parametreleri " + key + "," + value + " olarak eklendi");
-        System.out.println("committtt");
+        System.out.println("committttdddd");
     }
 
     @Step("Hashmapin icindeki <hashmapKey> keyinin degeri <hashmapKey2> keyinin degeri ile <type> mı kontrol et")
